@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  const ips = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  const clientIP = ips.split(',')[0].trim(); // Pega o primeiro IP da lista
   res.send(`IP do Cliente: ${clientIP}`);
 });
 
