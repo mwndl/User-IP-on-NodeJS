@@ -3,7 +3,7 @@ const app = express();
 
 app.get('/', (req, res) => {
   const ips = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  const clientIP = ips.split(',')[0].trim();
+  const clientIP = ips.split(',').trim();
   res.send(`Client IP: ${clientIP}`);
 });
 
