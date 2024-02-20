@@ -2,4 +2,3 @@
 A simple code to get the Client IP on a NodeJS server
 
 Clone this repository and apply the methods to your service
-Note: Testing this code on a local
